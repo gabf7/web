@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: url('../img/Taxi.jpg') center/cover no-repeat fixed;
+    display: grid;
+    grid-template-areas: "header" "main" "carrusel" "info" "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto auto auto;
+    min-height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: #74ACDF;
+    padding: 3vh 1vw;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 10rem);
+    font-weight: bold;
+    color: #F4B947;
+    -webkit-text-stroke: 2px #95481B;
+    -webkit-text-fill-color: #F4B947;
+    background: white;
+    padding: 1vh 5vw;
+    border-radius: 1vw;
+    display: inline-block;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+section, aside {
+    padding: 1rem;
+    margin: 3rem 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+section h2, section p {
+    text-align: right;
+}
+
+section h2, aside h2 {
+    font-size: clamp(2rem, 2vw, 7rem);
+}
+
+section p, .destino h2 {
+    font-size: clamp(1.2rem, 2vw, 6rem);
+}
+
+section a, .widget, .destino p, .info .texto, .footer-container, .footer-rights {
+    font-size: clamp(1.2rem, 1vw, 5rem);
+}
+
+section a {
+    float: right;
+    background: #1F1F1F;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+section a:hover {
+    color: #1F1F1F;
+    background: white;
+}
+
+aside {
+    background: #74ACDF;
+    color: white;
+}
+
+aside h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.widget {
+    display: grid;
+    align-items: end;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.titulo-carrusel {
+    text-align: left;
+    font-size: clamp(1.5rem, 4vw, 9rem);
+    font-weight: bold;
+    margin: 2rem;
+    color: #F4B947;
+    -webkit-text-stroke: 2px #95481B;
+    -webkit-text-fill-color: #F4B947;
+}
+
+.carrusel-container {
+    grid-area: carrusel;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.contenedor {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.destino {
+    flex: 0 0 calc(25% - 1.5rem);
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.destino h2 {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.destino img {
+    width: 100%;
+    height: max(20vh, 10vh);
+    border-radius: 5px;
+}
+
+.destino p {
+    text-align: justify;
+}
+
+.info {
+    grid-area: info;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: white;
+    padding: 5vh 10vw;
+    text-align: justify;
+}
+
+.info img {
+    width: 25vh;
+    height: 25vh;
+    border-radius: 5px;
+    justify-self: center;
+}
+
+footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-info, .footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: clamp(1rem, 5vh, 8rem);
+    height: clamp(1rem, 5vh, 8rem);
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-rights {
+    margin-top: 1rem;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    width: clamp(2rem, 10vh, 16rem);
+    height: clamp(2rem, 10vh, 16rem);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, 5vh, 8rem);
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+.whatsapp-float:hover {
+    background: #1ebe57;
+}
+
+@media (max-width: 900px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding-top: 1rem;
+    }
+
+    section, aside {
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    section h2 {
+        text-align: left;
+    }
+
+    .titulo-carrusel {
+        margin: 1rem;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .info .texto {
+        padding: 1rem;
+    }
+
+}
+
+@supports not (-webkit-text-stroke: 2px #95481B) {
+    header h1, .titulo-carrusel {
+        text-shadow: -2px -2px 0 #95481B, 2px 2px 0 #95481B;
+    }
+}
