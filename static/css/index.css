@@ -20,7 +20,7 @@ html, body {
 header {
     grid-area: header;
     background-color: #74ACDF;
-    padding: 3vh 1vw;
+    padding: 3vh 10vw;
     text-align: center;
 }
 
@@ -32,8 +32,8 @@ header h1 {
     -webkit-text-stroke: 2px #95481B;
     -webkit-text-fill-color: #F4B947;
     background: white;
-    padding: 1vh 5vw;
-    border-radius: 1vw;
+    padding: 2vh 4vw;
+    border-radius: 3vh;
     display: inline-block;
 }
 
