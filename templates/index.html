@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="static/img/Icon.png">
-    <title>Taxi traslados Alejandro</title>
+    {% if info.icono %}
+    <link rel="icon" type="image/png" href="{{ info.icono.url }}?v=1">
+    {% endif %}
+    <title>{{ info.nombre_negocio }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
     <header>
-        <h1>TAXI TRASLADOS ALEJANDRO</h1>
+        <h1>{{ info.nombre_negocio }}</h1>
         <!--nav></nav-->
     </header>
 
     <main>
         <section>
-            <h2><b>Te llevamos hasta tu destino.</b></h2>
+            <h2><b>{{ info.slogan_1 }}</b></h2>
             <br>
-            <p><i>Tu viaje, nuestra prioridad</i></p>
+            <p><i>{{ info.slogan_2 }}</i></p>
             <br>
-            <a href="https://wa.me/5491157651442" target="_blank"><b>RESERVA AHORA</b></a>
+            <a href="https://wa.me/{{ info.whatsapp }}" target="_blank"><b>RESERVA AHORA</b></a>
         </section>
         <aside>
             <h2>Buenos Aires</h2>
@@ -37,26 +39,13 @@
         <h2 class="titulo-carrusel">Principales destinos turísticos</h2>
         <div class="carrusel">
             <div class="contenedor">
+                {% for l in lugares %}
                 <div class="destino">
-                    <h2>Obelisco</h2>
-                    <img src="static/img/obelisco.jpg" alt="Obelisco">
-                    <p>Icono de Buenos Aires, ideal para fotos y paseos.</p>
+                    <h2>{{ l.nombre }}</h2>
+                    <img src="{{ l.imagen.url }}" alt="{{ l.nombre }}">
+                    <p>{{ l.descripcion }}</p>
                 </div>
-                <div class="destino">
-                    <h2>Plaza Dorrego</h2>
-                    <img src="static/img/dorrego.jpg" alt="Plaza Dorrego">
-                    <p>Barrio colonial con ferias de antigüedades y tango en vivo.</p>
-                </div>
-                <div class="destino">
-                    <h2>Costanera Sur</h2>
-                    <img src="static/img/costanera.jpg" alt="Costanera Sur">
-                    <p>Zona moderna con restaurantes y una reserva ecológica.</p>
-                </div>
-                <div class="destino">
-                    <h2>Caminito</h2>
-                    <img src="static/img/caminito.jpg" alt="Caminito">
-                    <p>Barrio colorido con casas pintadas y espectáculos de tango.</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
